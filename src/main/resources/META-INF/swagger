@@ -1,0 +1,48 @@
+---
+openapi: 3.0.3
+info:
+  title: Zip Code Consult API
+  version: 1.0.0-SNAPSHOT
+paths:
+  /zipcode/{zipCode}:
+    get:
+      tags:
+      - Zip Code Controller
+      parameters:
+      - name: zipCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZipCode'
+components:
+  schemas:
+    ZipCode:
+      type: object
+      properties:
+        zipCode:
+          type: string
+        address:
+          type: string
+        complement:
+          type: string
+        neighborhood:
+          type: string
+        location:
+          type: string
+        uf:
+          type: string
+        ibge:
+          type: string
+        gia:
+          type: string
+        ddd:
+          type: string
+        siafi:
+          type: string
