@@ -48,3 +48,11 @@ quarkus {
     setSourceDir("src/main/kotlin")
     setOutputDirectory("build/classes/kotlin/main")
 }
+
+tasks.quarkusBuild {
+    nativeArgs {
+        "container-build" to true
+        "build-image" to "quay.io/quarkus/ubi-quarkus-native-image:21.2.0-java11"
+        "java-home" to "/opt/java-11/"
+    }
+}
